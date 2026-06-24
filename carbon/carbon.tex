@@ -13,11 +13,13 @@
 
 \usepackage{gensymb}
 
+\usepackage{url}
+
 \begin{document}
 
 \title{
   \textbf{Carbon} \\
-  the source of atmospheric carbon dioxide levels
+  a statistical view of the growth of atmospheric carbon dioxide
 }
 \author{Johan Montelius}
 \date{\today}
@@ -26,7 +28,7 @@
 
 \section*{Introduction}
 
-The concentration of carbon dioxide levels have increased during the
+The concentration of carbon dioxide has increased during the
 last century and we have very good data that shows us the
 concentration on a monthly basis during the last sixty years. The
 reason is, given the current narrative, that this is all due to our
@@ -39,14 +41,14 @@ is correct then it might have consequences.
 
 We start by examining the measurements of carbon dioxide
 concentrations in the atmosphere from the Mauna Loa observatory on the
-island of Hawaii. The data that we will use is the mean monthly
-measurements from $1958$ to $2026$ (full years from $1959$ to
-$2025$). If we plot these data we will see the classical {\em Keeling
-  curve} as shown Fig.\ref{fig:maunaloa}-a. If we look at the changes
-during a year we see "the earth breathing" - during the northern
-hemisphere summer, the growth in vegetation decrease the amount of
-carbon dioxide in the atmosphere which is later released during
-winter.
+island of Hawaii \cite{noaa:co2}. The data that we will use is the
+mean monthly measurements from $1958$ to $2026$ (full years from
+$1959$ to $2025$). If we plot these data we will see the classical
+{\em Keeling curve} as shown Fig. \ref{fig:keeling}. If we look at the
+changes during a year, in Fig. \ref{fig:year}, we see "the earth
+breathing" - during the northern hemisphere summer, the growth in
+vegetation decrease the amount of carbon dioxide in the atmosphere
+which is later released during winter.
 
 \begin{figure}[t]
   \centering
@@ -54,13 +56,14 @@ winter.
   \begin{subfigure}{.5\paperwidth}
     \includegraphics[scale=0.4]{../img/keeling.pdf}
     \caption{the Keeling curve}
+    \label{fig:keeling}
   \end{subfigure}%
   \begin{subfigure}{.5\paperwidth}
     \includegraphics[scale=0.4]{../img/yearly-variations.pdf}
     \caption{variation during a year.}
+    \label{fig:year}
   \end{subfigure}
   \caption{Carbon dioxide concentration in the atmosphere..}
-  \label{fig:maunaloa}
 \end{figure}
 
 One interesting fact to note is that the yearly natural changes has a
@@ -71,22 +74,22 @@ than the increase that we will investigate further.
 \section*{Emissions}
 
 We of course need data on the worlds yearly fossil fuel consumption
-and this is of course nothing that can be measured. However, since
+and this is not something that can be measured. However, since
 fossil fuels (coal, oil, gas) are globally traded there are reliable
 data on production and consumption, and for our use these will be
 sufficient.
 
-I've chosen the data obtained from "Global Carbon Budget" which is a
-provided by the University of Exeter. This compilation consists of
-estimates of yearly fossil fuel consumption, divided by source, from
-1850 up to 2024 (the data for 2025 is not yet provided). There are
-other compilations but they do not vary much and for our purposes I
-think the data is accurate enough.
+I've chosen the data obtained from "Global Carbon Budget" which is
+provided by the University of Exeter \cite{gcb}. This compilation
+consists of estimates of yearly fossil fuel consumption, divided by
+source, from 1850 up to 2024 (the data for 2025 is not yet
+provided). There are other compilations but they do not vary much and
+for our purposes I think the data is accurate enough.
 
-If we look at Fig.\ref{fig:gcb}-a we see the yearly emissions in
-giga-ton coal. We can note that emission up until 1950 were quite
+If we look at Fig. \ref{fig:gcb-emissions} we see the yearly emissions in
+gigatons of coal. We can note that emission up until 1950 were quite
 modest compared to our emissions today. If we look at
-Fig.\ref{fig:gcb}-b we see that the total accumulated emissions
+Fig. \ref{fig:gcb-accumulated} we see that the total accumulated emissions
 between 1850 and 1958 is approximately 80 GtC which could be compared
 to the emissions of 2024 alone that was in total 10 GtC i.e. today we
 emit in one decade more than we have emitted between 1850 and 1958. 
@@ -98,13 +101,14 @@ emit in one decade more than we have emitted between 1850 and 1958.
   \begin{subfigure}{.5\paperwidth}
     \includegraphics[scale=0.4]{../img/gcb.pdf}
     \caption{Yearly emissions}
+    \label{fig:gcb-emissions}
   \end{subfigure}%
   \begin{subfigure}{.5\paperwidth}
     \includegraphics[scale=0.4]{../img/gcb-cum.pdf}
     \caption{Accumulated emissions}
+    \label{fig:gcb-accumulated}
   \end{subfigure}
   \caption{Global Carbon Budget: world fossil emissions.}
-  \label{fig:gcb}
 \end{figure}
 
 
@@ -112,24 +116,25 @@ emit in one decade more than we have emitted between 1850 and 1958.
 
 One question we might ask is how well our emissions correlate with the
 increase on carbon dioxide concentrations. We can convert our
-emissions, that are measured on giga-ton of coal into concentration in
+emissions, that are measured in gigatons of coal, into concentration in
 the atmosphere, in ppm, by dividing by $2.13$ (standard procedure use
-by IPCC). The increase in concentration for a given year can of course
-be calculated in various ways but why not use the December value minus
-the previous December.
+by the IPCC). Using the December-to-December increase as the response
+variable we can then study the correlation.
 
-In Fig.\ref{fig:correlation} we see a scatter plot with linear
+In Fig. \ref{fig:correlation} we see a scatter plot with linear
 regression of the emissions and atmospheric increase. We can note that
 the emissions in general are twice as high as the increase seen in the
-atmosphere. The correlation is however not very strong, an $R^2$
-value of $0.6$ is not very reassuring. An emission in one year of
-approximately 3 ppm of carbon dioxide, corresponds to anything between
-$0.5$ to almost $3$ ppm of increase. What is it that determines the
-yearly increase; our emissions are - even though twice as high - not a
-good predictor of the atmospheric increase.
+atmosphere. The correlation is however not very strong, an $R^2$ value
+of $0.6$ is not very reassuring. An emission in one year of
+approximately 3 ppm, corresponds to anything between $0.5$ to almost
+$3$ ppm of increase in the atmosphere.  While the relationship is
+evident, a substantial fraction of the year-to-year variability
+remains unexplained. What is it that determines the yearly increase;
+our emissions are - even though twice as high - not a good predictor
+of the yearly changes in atmospheric concentrations.
 
 \begin{figure}[ht!]
-  \includegraphics[scale=0.6]{../img/correlation.pdf}
+  \includegraphics[scale=0.6]{img/emissions-ppm.pdf}
   \caption{Correlation: emissions and atmospheric increase.}
   \label{fig:correlation}
 \end{figure}
@@ -141,21 +146,21 @@ over the same period.
 
 \section*{Temperature}
 
-When do not have any reliable numbers on the {\em global temperature}
+We do not have any reliable numbers on the {\em global temperature}
 but we do have several good estimates on how temperature has changed
 over time. One source is "Global Land and Ocean Average Temperature
-Departures" compiled and published by NOAA. The series extend back to
-1850 but one must realize that the error bars are quite large when we
-are talking about remote areas before the age of satellites. We could
-have looked at the series published by University of Alabama in
-Huntsville that are based sole on satellite data, but that series only
-extends back to 1979.
+Departures" compiled and published by NOAA \cite{noaa:temp}. The
+series extend back to 1850 but one must realize that the error bars
+are quite large when we are talking about remote areas before the age
+of satellites. We could also look at the series published by
+University of Alabama in Huntsville that are based solely on satellite
+data, but this series only extends back to 1979 \cite{uah:60}.
 
-If we look at Fig.\ref{fig:temperature} we see that the two series in
-large agree. They have chosen different time periods as their base
-but to a large extent they do agree (UAH has a wider variance). For
-this discussion the difference does not matter that much and sin since we
-have carbon dioxide levels from 1958 we choose the series from NOAA.
+If we look at Fig. \ref{fig:temperature} we see that the two series
+largely agree. They have chosen different time periods as their base but
+to a large extent they do agree (UAH has a wider variance). Since the
+carbon dioxide measurements extend back to 1958 we can start by
+looking at the NOAA series.
 
 \begin{figure}[]
   \center
@@ -166,31 +171,31 @@ have carbon dioxide levels from 1958 we choose the series from NOAA.
 
 If we take the average of temperatures each year we can look at the
 correlation with increase in carbon dioxide levels. The result is
-shown in Fig.\ref{fig:temperature-ppm} and even though the correlation
+shown in Fig. \ref{fig:temperature-ppm} and even though the correlation
 is not very strong, $R^2$ is $0.72$ which is higher than what we had
 for the correlation with fossil emissions. From a statistical point of
 view, it would not be wrong to suspect that the temperature might
-affect the carbon dioxide levels more than our emissions.
+affect the carbon dioxide levels as much as our emissions.
 
 \begin{figure}[ht!]
   \center
-  \includegraphics[scale=0.5]{../img/temperature-ppm.pdf}
+  \includegraphics[scale=0.5]{img/temperature-ppm.pdf}
   \caption{Correlation: temperature and atmospheric increase.}
   \label{fig:temperature-ppm}
 \end{figure}
 
 \section*{Regression}
 
-Since we suspect that both emissions and temperature effect the carbon
+Since we suspect that both emissions and temperature affect the carbon
 dioxide levels we could of course do a regression analysis for:
 
 $$ incr = k_t \times temp + k_e \times emi + const$$
 
 The result is shown in Tab.\ref{tab:regression} and from this we would
 conclude that the temperature is a far more important factor in
-determining the increase in carbon dioxide levels. Given the regression
-analysis it strangely enough seams that our emissions play no role at
-all? 
+determining the increase in carbon dioxide levels. In this regression,
+emissions are not statistically distinguishable from zero after
+controlling for temperature; this is rather surprising.
 
 
 \begin{table}[ht!]
@@ -208,84 +213,185 @@ emi &          -0.0083 &    0.125 &   -0.066 &    0.947 &    [-0.26, 0.24] \\
 
 Before we draw any conclusions of this regression analysis we should
 note that the temperature and yearly emissions are highly correlated
-($0.947$). They both show an increase during the period and it might
-be hard to separate the two. We also have a large constant factor that
-hides the contribution from either the temperature or emissions or
-both. The constant factor would however disappear if we used
-temperature anomalies from the mid eighteen-hundreds when the global
-average was half a degree lower.
-
-The statistical model we now have:
-
-$$ incr = 1.8 \times temp + 1$$
-
-gives us that the carbon dioxide levels would stabilize if the
-temperature dropped to a half degree below the NOAA reference period
-(1901-2000). Is it possible that emissions play an insignificant role?
+($0.95$). They both show an increase during the period and in a
+regression analysis it might be hard to separate the two.
 
 
-\section*{Model}
+\section*{Statistical Model}
 
-When first presented with the given model a normal reaction is that
-"yes - temperature effect the yearly increase but the long term
-increase is due to emissions". This might be true but the statistical
-model we now have does correlate well with the yearly increases as shown in 
-Fig.\ref{fig:recon}-a. If we integrate the statistical model and start from $315$ ppm we 
-can explain the whole increase of atmospheric carbon dioxide over the period as seen in Fig.\ref{fig:recon}-b.
+If we should trust the regression analysis the temperature is the
+decisive factor if we want to predict the increase of carbon dioxide in
+the atmosphere. Given the correlation shown in
+Fig. \ref{fig:temperature-ppm} we can create a model:
+
+$$ incr = 1.75 \times t + 0.99$$
+
+The model can then be used to generate the yearly increases as shown
+in Fig. \ref{fig:increase}. The generated series has a root mean square
+error of $0.38$ and one clearly sees how it captures some of the
+yearly changes. If we integrate the statistical model and start from
+$315$ ppm the resulting reconstruction reproduces much of the observed
+increase over the calibration period as seen in
+Fig. \ref{fig:accumulated}.
 
 \begin{figure}[ht!]
   \centering
   \hspace*{-3cm}
   \begin{subfigure}{.5\paperwidth}
-    \includegraphics[scale=0.5]{../img/recon1.pdf}
+    \includegraphics[scale=0.5]{img/recon1.pdf}
     \caption{increase}
+    \label{fig:increase}
   \end{subfigure}%
   \begin{subfigure}{.5\paperwidth}
-    \includegraphics[scale=0.5]{../img/recon2.pdf}
+    \includegraphics[scale=0.5]{img/recon2.pdf}
     \caption{accumulated}
+    \label{fig:accumulated}
   \end{subfigure}
-  \caption{Reconstruction of carbon dioxide levels}
-  \label{fig:recon}
+  \caption{Reconstruction of carbon dioxide levels given temperature.}
 \end{figure}
 
-The statistical model that we have now is of course not a physical
-model of what is happening. It happens to be a good approximation of
-the last sixty years but fails when we for example try to explain the
-growth from $1850$ when carbon dioxide levels are believed to be
-around $285$ ppm. The model will over shoot and land on a calculated
-value of $470$ ppm where the current level is approximately $420$ ppm
-as shown in Fig.\ref{fig:shoot}.
+We should now note that we can do very good reconstruction of the
+carbon dioxide levels also using the emissions alone. In
+Fig. \ref{fig:increase_em} we see the equivalent reconstruction of
+yearly increase using the following model:
 
+$$ incr = 0.5 \times emi + 0.15$$
+
+As we can clearly see we capture the long term trend even though the
+yearly variations are missing. The root mean square error is $0.43$
+which is not as good as for the temperature model but still very
+good. The reconstruction of the accumulated series shown in
+Fig. \ref{fig:accumulated_em} also shows an almost perfect match with
+the measured values.
+
+\begin{figure}[ht!]
+  \centering
+  \hspace*{-3cm}
+  \begin{subfigure}{.5\paperwidth}
+    \includegraphics[scale=0.5]{img/recon_em1.pdf}
+    \caption{increase}
+    \label{fig:increase_em}
+  \end{subfigure}%
+  \begin{subfigure}{.5\paperwidth}
+    \includegraphics[scale=0.5]{img/recon_em2.pdf}
+    \caption{accumulated}
+    \label{fig:accumulated_em}
+  \end{subfigure}
+  \caption{Reconstruction of carbon dioxide levels given emissions.}
+\end{figure}
+
+So we have two statistical models that both do a decent job of
+recreating the observed carbon dioxide levels. The regression analysis
+favors one but since the two explaining variables are so well
+correlated it's hard to tell them apart.
+
+Since we have data on both the temperature anomalies and emissions
+from 1850, we could try to do a long term reconstruction. The carbon
+dioxide level in 1850 is believed to be around $285$ ppm so we use
+this as our starting point. As shown in Fig. \ref{fig:long} both models
+overshoot the measured values even though the temperature model, shown
+in Fig. \ref{fig:long_t}, does a far better job. The temperature model
+will land on a calculated value of $470$ ppm, where the current level
+is approximately $420$ ppm. The emissions model, shown in
+Fig. \ref{fig:long_em}, will land on $712$ ppm which clearly shows that
+the model does not work for longer periods.
+
+\begin{figure}[ht!]
+  \centering
+  \hspace*{-3cm}
+  \begin{subfigure}{.5\paperwidth}
+    \includegraphics[scale=0.5]{img/recon3.pdf}
+    \caption{Reconstruction given temperature.}
+    \label{fig:long_t}
+  \end{subfigure}%
+  \begin{subfigure}{.5\paperwidth}
+    \includegraphics[scale=0.5]{img/recon6.pdf}
+    \caption{Reconstruction given emissions. }
+    \label{fig:long_em}
+  \end{subfigure}
+  \caption{Long term reconstruction of carbon dioxide levels.}
+  \label{fig:long}
+\end{figure}
+
+The statistical models that we have now are of course not physical
+models of what is happening. They happen to be good approximations of
+the last sixty years but fails when we try to explain the long term
+growth. 
+
+If we try to create a physical model of what is happening we must of
+course include emissions. For obvious reasons they do of course add
+carbon dioxide to the atmosphere and this should mean something. We
+could create a physical model where temperature does not play a role
+but we would then say that the correlation that we see is just a
+coincidence.
+
+To see how unlikely this is we could do a Monte Carlo simulation of
+carbon dioxide series. The increments that we see from year to year are
+autocorrelated with a lag of one and we can model the series with the
+following equation:
+
+$$ {\rm inc}[i] = 0.65\times {\rm inc}[i-1] + 0.62 + \varepsilon$$
+
+where $\varepsilon$ is a normally distributed variable with $\sigma =
+0.56$. The residual of the measured series and the linear regression
+is not normally distributed but close enough for our purposes. Our null
+hypothesis is that the carbon dioxide level follows the given model
+but is otherwise unrelated to the temperature.
+
+If we collect the $R^2$ values of each generated series and the
+measured temperature we can compare this to the observed $R^2$. We
+then find, as seen is Fig. \ref{fig:monte}, that the observed $R²$ value is an outlier. The
+generated series have a median $R^2$ value of $0.06$ and the
+99-percentile is $0.33$. Given the observed $R^2$ value of $0.72$ we
+can safely discard the null hypothesis.
 
 \begin{figure}[ht!]
   \center
-  \includegraphics[scale=0.5]{../img/recon3.pdf}
-  \caption{Reconstruction from 1850, starting at 285 ppm.}
-  \label{fig:shoot}
+  \includegraphics[scale=0.5]{img/monte-r2.pdf}
+  \caption{Monte Carlo simulation, dsitribution of $R^2$ compared to observed.}
+  \label{fig:monte}
 \end{figure}
 
-If we try to create a physical model of what is happening we must of
-course explain where our emissions go. We can not simply say that they
-disappear; since we obviously emit them in the atmosphere we need to
-explain why they do not contribute much to the increase that we have
-seen. If we build such a model we should not be surprised if the
-temperature plays a significant role and even explains a large part of
-the increase of carbon dioxide in the atmosphere.
+The Monte Carlo analysis suggests that the observed relationship
+between temperature and annual carbon dioxide growth is unlikely to
+arise solely from the autocorrelation structure of the growth series.
+The analysis suggests that the year-to-year increase of atmospheric
+carbon dioxide is statistically connected to temperature.
 
-\section*{Summary}
+A physical interpretation could be that the flow of carbon dioxide
+between the oceans and the atmosphere is temperature dependent. The
+question is if this process only means something on a yearly basis or
+if it has long term consequences.
 
-I argue that if should understand the reason behind the increase in
-carbon dioxide levels in the atmosphere, we need to take temperature
-into account. The view that it only contribute to the variability in
-yearly changes but not in the long term increase is to simplify
-matters. In the end, I think the temperature increase that we have
-seen during the last hundred years can explain a large part of the
-atmospheric in crease that is observed, what is your guess: 10, 20 or
-50 percent?
+\section*{Discussion}
 
-If it turns out that emissions play a minor role in the increasing
-carbon dioxide levels in the atmosphere we might have to reconsider
-much of today's climate policies.
+The analysis suggests that temperature may play a larger role in
+short-term changes in atmospheric carbon dioxide than is often
+assumed. Determining how much of the long-term increase can be
+attributed to temperature-dependent processes remains an open
+question. The correlation between emissions and temperature during the
+period is too high to make it possible to separate the two
+statistically.
+
+In the end we want to construct a physical model of how carbon dioxide
+in the atmosphere changes. This model should of course take emissions
+into account but it should probably also have temperature as one
+factor. It is quite obvious that the temperature affects at least the
+short term changes and it would not be surprising if it also played a
+role in the long term.
+
+The analysis demonstrates a strong relationship between temperature
+and annual carbon dioxide growth. Whether this relationship can
+account for a substantial fraction of the century-scale increase in
+atmospheric carbon dioxide remains unresolved.
+
+If temperature is, if not the main driver but, partly responsible for
+even the long term growth it will have consequences; any attempt to
+limit the increase by controlling emissions might not be as effective
+as generally assumed.
+
+\bibliographystyle{plain} % We choose the "plain" reference style
+\bibliography{../bib/carbon} % Entries are in the refs.bib file
 
 
 \end{document}
