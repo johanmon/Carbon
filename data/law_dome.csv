@@ -2,7 +2,7 @@
 #Air - age of air bubbles in ice or "firn" if measured in the firn
 #CO2 - concentration of CO2 in ppm
 #Uncert - uncertainty in ppm
-ID, Ice, Air, CO2,Uncert
+ID,Ice,Air,CO2,Uncert
 DSSW20K 15.8,firn,1996,359.87,0.02
 DSSW20K 29,firn,1994,357.24,0.04
 DE08-2 0,firn,1993,354.6,0.02
